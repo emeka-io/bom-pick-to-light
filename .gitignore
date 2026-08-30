@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# VS Code
+.vscode/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Testing & Type Checking
+.pytest_cache/
+.mypy_cache/
+
+# Firmware / Embedded Toolchains
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Build & Dist Artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# KiCad Temp/Backup Files
+*.bck
+*.kicad_pcb-bak
+*-backups/
+
+# Local Data Overrides
+*.local.csv
