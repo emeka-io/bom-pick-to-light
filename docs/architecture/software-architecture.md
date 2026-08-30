@@ -41,12 +41,15 @@ class InventoryBin:
     coordinate_y: int       # Physical grid row
 
 
-Class,Responsibilities,Inputs,Outputs
-BOMParser,"Validates file structure, strips whitespace, parses quantities",Raw CSV / JSON path,list[BOMItem]
-InventoryStore,"Tracks bin stock, updates inventory post-pick",Query requests,InventoryBin or StockDeficit
-MatchingEngine,Cross-references BOMItem with InventoryBin,"list[BOMItem], InventoryStore",MatchResult (Matches & Unmapped list)
-PickQueue,Orders items by path distance to optimize retrieval time,MatchResult,Ordered list[PickStep]
-SerialDriver,"Serializes command packets (SET_LED, RESET_ALL)",PickStep,Byte stream over Serial / UART
+## 3. Class Interactions & Responsibilities
+
+| Class | Responsibilities | Inputs | Outputs |
+| :--- | :--- | :--- | :--- |
+| **BOMParser** | Validates file structure, strips whitespace, parses quantities | Raw CSV / JSON path | `list[BOMItem]` |
+| **InventoryStore** | Tracks bin stock, updates inventory post-pick | Query requests | `InventoryBin` or `StockDeficit` |
+| **MatchingEngine** | Cross-references `BOMItem` with `InventoryBin` | `list[BOMItem]`, `InventoryStore` | `MatchResult` (Matches & Unmapped list) |
+| **PickQueue** | Orders items by path distance to optimize retrieval time | `MatchResult` | Ordered `list[PickStep]` |
+| **SerialDriver** | Serializes command packets (`SET_LED`, `RESET_ALL`) | `PickStep` | Byte stream over Serial / UART |
 
 
 4. Error Handling & Edge Cases
