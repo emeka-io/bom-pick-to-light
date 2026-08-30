@@ -37,7 +37,6 @@ The system is structured as a decoupled, multi-tier architecture consisting of a
 |                                                               |
 |            [ Addressable LEDs ]       [ Pick Buttons/Sensors ] |
 +---------------------------------------------------------------+
-
 ```
 ---
 
