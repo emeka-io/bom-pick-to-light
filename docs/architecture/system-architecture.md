@@ -4,10 +4,11 @@
 
 The system is structured as a decoupled, multi-tier architecture consisting of a **Host Control Engine (Python)**, a **Real-Time Controller (ESP32 Firmware)**, and a **Physical Hardware Interface (Bin Module Assembly)**.
 
+```text
 +---------------------------------------------------------------+
 |                       Host Software Layer                     |
 |                                                               |
-|  [ BOM File ] ---> [ Parser ] ---> [ Matching Engine ]         |
+|  [ BOM File ] ---> [ Parser ] ---> [ Matching Engine ]        |
 |  (CSV/JSON)                             |                     |
 |                                         v                     |
 |                                  [ Pick Queue ]               |
@@ -15,9 +16,9 @@ The system is structured as a decoupled, multi-tier architecture consisting of a
 |                                         v                     |
 |                              [ Serial Interface Engine ]      |
 +---------------------------------------------------------------+
-|
-(UART / USB)
-v
+                                  |
+                           (UART / USB)
+                                  v
 +---------------------------------------------------------------+
 |                      Firmware Control Layer                   |
 |                                                               |
@@ -29,20 +30,21 @@ v
 |                  v                           v                |
 |           [ LED Driver ]               [ Input Handler ]      |
 +---------------------------------------------------------------+
-|                             |
-v                             v
+                   |                             |
+                   v                             v
 +---------------------------------------------------------------+
 |                         Physical Layer                        |
 |                                                               |
 |            [ Addressable LEDs ]       [ Pick Buttons/Sensors ] |
 +---------------------------------------------------------------+
 
+```
 ---
 
 ## 2. Core Subsystems
 
 ### 2.1 Host Software Subsystem (Python)
-* **BOM Parser:** Ingests raw assembly component listings, cleans designators, and standardizes part numbers.
+* **BOM Parser:** Ingests raw assembly component listings, cleans designators, and standardizes part numbers.0
 * **Inventory Data Layer:** Maintains state for local bin assignments, part quantities, and bin coordinates.
 * **Matching & Queue Engine:** Reconciles BOM line items with available inventory, flags stock deficits, and builds a coordinate-sorted pick list.
 * **Host Communications Manager:** Packs structured commands (e.g., `SET_LED:BIN_04:COLOR_GREEN:PULSE`) and sends them over the serial connection while listening for hardware acknowledgment events.
