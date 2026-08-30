@@ -36,14 +36,14 @@
 | **GPIO 15** | Bin 4 Pick Sense | Input | Tactile Switch / IR | Internal pull-up enabled |
 | **TXD0 / RXD0** | Serial Comms | Bidirectional | Host PC USB-UART | Baud rate: 115200 bps |
 
-3. Power Distribution Strategy
+## 3. Power Distribution Strategy
 - Dual-Rail Considerations: The ESP32 logic operates at 3.3V, while WS2812B LEDs require 5V VCC.
 
 - LED Power Allocation: Each WS2812B RGB LED draws approximately 60mA at full white brightness. Power rails must be sized to support peak current for all active bins simultaneously.
 
 - Bulk Capacitance: A 1000µF, 6.3V electrolytic capacitor is connected across the main 5V and GND rails to smooth out switching current spikes.
 
-4. Mechanical Integration & Housing Interface
+## 4. Mechanical Integration & Housing Interface
 - Modular Mounting: Bin modules utilize 3D-printable enclosures designed in Onshape (located in mechanical/cad/).
 
 - Light Diffusion: Acrylic or 3D-printed PLA light diffusers mount over each LED channel (mechanical/cad/diffuser/) for soft visual feedback.
