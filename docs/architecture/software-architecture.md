@@ -1,7 +1,10 @@
-Software Architecture — BOM Pick-to-Light System
-1. Module Structure
-The host software is implemented as a modular Python package located inside software/core/:
+### Software Architecture — BOM Pick-to-Light System
 
+## 1. Module Structure
+
+The host software is implemented as a modular Python package located inside `software/core/`:
+
+```text
 software/core/
 ├── bom/
 │   ├── parser.py           # Ingests and standardizes raw CSV/JSON BOMs
@@ -16,11 +19,15 @@ software/core/
 └── comms/
     └── serial_driver.py    # Manages host-to-MCU serial protocol framing
 
-2. Core Data Models
-2.1 BOM Item Model
+```
 
+## 2. Core Data Models
+# 2.1 BOM Item Model
+
+```python
 from dataclasses import dataclass
 from typing import Optional
+
 
 @dataclass(frozen=True)
 class BOMItem:
@@ -29,17 +36,21 @@ class BOMItem:
     designators: list[str]
     description: Optional[str] = None
 
+```
 
-2.2 Inventory Bin Model
+# 2.2 Inventory Bin Model
+
+```python
+from dataclasses import dataclass
 
 @dataclass
 class InventoryBin:
-    bin_id: str             # e.g., "BIN-A-01"
+    bin_id: str  # e.g., "BIN-A-01"
     part_number: str
     quantity_on_hand: int
-    coordinate_x: int       # Physical grid column
-    coordinate_y: int       # Physical grid row
-
+    coordinate_x: int  # Physical grid column
+    coordinate_y: int  # Physical grid row
+```
 
 ## 3. Class Interactions & Responsibilities
 
