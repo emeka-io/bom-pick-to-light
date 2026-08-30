@@ -25,13 +25,16 @@
 
 ```
 
-Pin Name,Function,Direction,Connected Device,Notes
-GPIO 18,LED Data Line,Output,WS2812B Strip DIN,Requires 330Ω series resistor
-GPIO 12,Bin 1 Pick Sense,Input,Tactile Switch / IR,Internal pull-up enabled
-GPIO 13,Bin 2 Pick Sense,Input,Tactile Switch / IR,Internal pull-up enabled
-GPIO 14,Bin 3 Pick Sense,Input,Tactile Switch / IR,Internal pull-up enabled
-GPIO 15,Bin 4 Pick Sense,Input,Tactile Switch / IR,Internal pull-up enabled
-TXD0 / RXD0,Serial Comms,Bidirectional,Host PC USB-UART,Baud rate: 115200 bps
+## 2. Microcontroller Pin Mapping (ESP32-WROOM-32)
+
+| Pin Name | Function | Direction | Connected Device | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **GPIO 18** | LED Data Line | Output | WS2812B Strip DIN | Requires 330Ω series resistor |
+| **GPIO 12** | Bin 1 Pick Sense | Input | Tactile Switch / IR | Internal pull-up enabled |
+| **GPIO 13** | Bin 2 Pick Sense | Input | Tactile Switch / IR | Internal pull-up enabled |
+| **GPIO 14** | Bin 3 Pick Sense | Input | Tactile Switch / IR | Internal pull-up enabled |
+| **GPIO 15** | Bin 4 Pick Sense | Input | Tactile Switch / IR | Internal pull-up enabled |
+| **TXD0 / RXD0** | Serial Comms | Bidirectional | Host PC USB-UART | Baud rate: 115200 bps |
 
 3. Power Distribution Strategy
 - Dual-Rail Considerations: The ESP32 logic operates at 3.3V, while WS2812B LEDs require 5V VCC.
