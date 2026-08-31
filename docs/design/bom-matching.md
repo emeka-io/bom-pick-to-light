@@ -50,13 +50,15 @@ For each normalized line item in the BOM, the matching engine executes the follo
 
 ```
 ## 4. Output Reconciliation Report Schema
-Upon execution, the engine produces a MatchResult data structure:
 
-Field,Type,Description
-matched_items,list[MatchedStep],Validated BOM line items paired with physical bin_id locations
-unmapped_items,list[BOMItem],BOM items missing corresponding entries in the inventory store
-deficit_items,list[StockDeficit],Items found in inventory but lacking sufficient quantity_on_hand
-is_executable,Boolean,Returns True only if unmapped_items and deficit_items are empty
+Upon execution, the engine produces a `MatchResult` data structure:
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| **matched_items** | `list[MatchedStep]` | Validated BOM line items paired with physical `bin_id` locations |
+| **unmapped_items** | `list[BOMItem]` | BOM items missing corresponding entries in the inventory store |
+| **deficit_items** | `list[StockDeficit]` | Items found in inventory but lacking sufficient `quantity_on_hand` |
+| **is_executable** | `Boolean` | Returns `True` only if `unmapped_items` and `deficit_items` are empty |
 
 
 ## 5. Sample Python Execution Example
