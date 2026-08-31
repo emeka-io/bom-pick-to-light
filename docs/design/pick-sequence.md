@@ -45,14 +45,16 @@ Each individual pick step advances through a strict 4-stage lifecycle:
 ```
 
 ## 4. Hardware Command Packet Payload
-When a pick step transitions to ACTIVE, the Host Serial Engine dispatches a formatted packet to the microcontroller:
 
-Packet Field,Type,Description
-Header,String,"Standard command delimiter (""CMD:PICK_STEP"")"
-Bin ID,String,"Physical bin identifier (e.g., ""BIN-A-01"")"
-Target LED Index,Integer,Hardware index on addressable LED bus
-Color Code,Hex / RGB,"Active color state (""0x00FF00"" for Green)"
-Quantity Required,Integer,Component count displayed to operator
+When a pick step transitions to **ACTIVE**, the Host Serial Engine dispatches a formatted packet to the microcontroller:
+
+| Packet Field | Type | Description |
+| :--- | :--- | :--- |
+| **Header** | String | Standard command delimiter (`CMD:PICK_STEP`) |
+| **Bin ID** | String | Physical bin identifier (e.g., `BIN-A-01`) |
+| **Target LED Index** | Integer | Hardware index on addressable LED bus |
+| **Color Code** | Hex / RGB | Active color state (`0x00FF00` for Green) |
+| **Quantity Required** | Integer | Component count displayed to operator |
 
 
 ## 5. Sequence Execution Flow Example
