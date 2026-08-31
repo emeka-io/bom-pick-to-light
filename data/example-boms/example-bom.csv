@@ -1,0 +1,5 @@
+﻿part_number,quantity_required,designators,description
+RES-10K-0805,4,"R1, R2, R3, R4",10k Ohm 0805 Resistor
+CAP-100NF-0603,2,"C1, C2",100nF 0603 Capacitor
+MCU-ESP32-WROOM,1,U1,ESP32 Microcontroller Module
+LED-WS2812B-5050,4,"D1, D2, D3, D4",WS2812B RGB Addressable LED

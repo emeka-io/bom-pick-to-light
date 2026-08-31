@@ -1,0 +1,5 @@
+﻿bin_id,part_number,quantity_on_hand,unit_of_measure,coordinate_x,coordinate_y
+BIN-A-01,RES-10K-0805,150,PCS,1,1
+BIN-A-02,CAP-100NF-0603,200,PCS,1,2
+BIN-B-01,MCU-ESP32-WROOM,12,PCS,2,1
+BIN-B-02,LED-WS2812B-5050,45,PCS,2,2
